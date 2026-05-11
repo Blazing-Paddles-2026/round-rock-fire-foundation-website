@@ -2,7 +2,6 @@
   const params = new URLSearchParams(window.location.search);
   if (params.get("edit") !== "1") return;
 
-  const storageKey = `rrff-review-edits:${window.location.pathname}`;
   const editableSelector = [
     "main h1",
     "main h2",
@@ -17,7 +16,6 @@
     ".foot-disclaimer"
   ].join(",");
 
-  const saved = JSON.parse(localStorage.getItem(storageKey) || "{}");
   const originals = {};
 
   function cleanText(value) {
@@ -64,7 +62,6 @@
     });
 
     bar.querySelector("[data-clear]").addEventListener("click", () => {
-      localStorage.removeItem(storageKey);
       window.location.reload();
     });
   }
@@ -85,16 +82,8 @@
       el.spellcheck = true;
       el.classList.add("rrff-review-editable");
 
-      if (saved[key]) el.textContent = saved[key];
-
       el.addEventListener("click", (event) => {
         if (el.tagName.toLowerCase() === "a") event.preventDefault();
-      });
-
-      el.addEventListener("input", () => {
-        const next = JSON.parse(localStorage.getItem(storageKey) || "{}");
-        next[key] = cleanText(el.textContent);
-        localStorage.setItem(storageKey, JSON.stringify(next));
       });
     });
   }
