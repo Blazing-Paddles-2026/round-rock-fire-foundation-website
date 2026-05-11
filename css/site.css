@@ -290,6 +290,7 @@
   letter-spacing: -0.016em;
   color: var(--ink);
   margin: 0 0 22px;
+  font-style: italic;
 }
 .chief-attribution {
   margin: 0 0 24px;
