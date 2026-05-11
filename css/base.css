@@ -1,0 +1,80 @@
+/* RRFF Mockup — Base reset & tokens */
+:root {
+  /* Brand palette */
+  --navy: #0B1320;
+  --navy-deep: #070C16;
+  --charcoal: #14181E;
+  --cream: #F4EFE3;
+  --cream-2: #ECE5D3;
+  --paper: #FBF7EC;
+  --ink: #1A1F28;
+  --ink-2: #2A2F39;
+  --muted: #6A6D75;
+  --line: rgba(11,19,32,.12);
+  --line-light: rgba(244,239,227,.16);
+
+  --gold: #E0A22A;
+  --gold-deep: #B47C12;
+  --gold-soft: #F2C969;
+  --red: #B23A2A;     /* restrained, used sparingly */
+  --red-deep: #7E2418;
+
+  /* Typography */
+  --display: "Zodiak", "Satoshi", ui-serif, Georgia, serif;
+  --sans: "Satoshi", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+
+  /* Sizes */
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-md: 16px;
+  --text-lg: 18px;
+  --text-xl: 22px;
+  --text-2xl: 28px;
+  --text-3xl: 36px;
+  --text-4xl: 48px;
+  --text-hero: clamp(40px, 6.6vw, 88px);
+  --text-display: clamp(28px, 4vw, 56px);
+
+  /* Layout */
+  --maxw: 1240px;
+  --pad-x: clamp(20px, 4vw, 56px);
+  --pad-y: clamp(64px, 9vw, 128px);
+  --radius: 14px;
+  --radius-sm: 8px;
+  --shadow-lg: 0 30px 80px -30px rgba(0,0,0,.45);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  font-size: var(--text-md);
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; }
+input, button, select, textarea { font: inherit; color: inherit; }
+::selection { background: var(--gold); color: var(--navy-deep); }
+
+h1, h2, h3, h4 {
+  font-family: var(--display);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.05;
+  margin: 0 0 0.4em;
+  color: var(--ink);
+}
+h4 { font-family: var(--sans); letter-spacing: 0; }
+p { margin: 0 0 1em; }
+
+.visually-hidden {
+  position: absolute !important; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0);
+  white-space: nowrap; border: 0;
+}

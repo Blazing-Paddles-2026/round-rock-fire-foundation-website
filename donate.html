@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>RRFF — Donate &amp; Impact Mockup</title>
+<meta name="description" content="Round Rock Fire Foundation donation and impact mockup — give, see your impact, FAQs." />
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@500,700,400,900&f[]=zodiak@700,500&display=swap" />
+<link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="css/site.css" />
+</head>
+<body data-route="donate">
+
+<header class="topbar" role="banner">
+  <a class="logo" href="index.html" aria-label="Round Rock Fire Foundation home">
+    <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+      <path d="M20 4 C26 12, 32 16, 32 24 a12 12 0 0 1-24 0 c0-6 4-10 6-14 2 4 4 6 4 10 0-4 1-8 2-16z" fill="currentColor"/>
+      <circle cx="20" cy="26" r="4" fill="#0B1320"/>
+    </svg>
+    <span class="logo-word">Round Rock <em>Fire Foundation</em></span>
+  </a>
+  <nav class="primary-nav" aria-label="Primary">
+    <a href="index.html">Home</a>
+    <a href="donate.html" class="is-active">Donate &amp; Impact</a>
+    <a href="volunteer.html">Volunteer</a>
+    <a href="index.html#programs">Programs</a>
+    <a href="index.html#contact">Request Support</a>
+  </nav>
+  <div class="top-cta">
+    <a class="btn btn-ghost" href="volunteer.html">Volunteer</a>
+    <a class="btn btn-gold" href="#give">Donate</a>
+  </div>
+  <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="concept-ribbon" role="region" aria-label="Mockup concept switcher">
+  <span class="ribbon-label">Mockup set · v2</span>
+  <a href="index.html">01 Home</a>
+  <a href="donate.html" class="is-active">02 Donate &amp; Impact</a>
+  <a href="volunteer.html">03 Volunteer</a>
+  <span class="ribbon-note">Static concept · Uses RRFF-owned photography only</span>
+</div>
+
+<main>
+
+<!-- DONATE HERO -->
+<section class="page-hero page-hero-navy">
+  <div class="page-hero-inner">
+    <p class="eyebrow eyebrow-light"><span class="dot"></span>Give · Tax-deductible · 501(c)(3)</p>
+    <h1 class="display light">
+      Become a Founding Legacy Donor for <span class="accent-gold">Round Rock fire families.</span>
+    </h1>
+    <p class="lede light">
+      We were established in 2025 and are building the donor base needed to launch The 1884 Fund this year.
+      Early gifts help create the confidential emergency-relief reserve fire families can count on for medical travel, care needs, hardship, and crisis response.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-gold btn-lg" href="#give">Give now</a>
+      <a class="btn btn-outline-light btn-lg" href="#impact">See your impact</a>
+    </div>
+  </div>
+  <div class="page-hero-graphic" aria-hidden="true">
+    <div class="ph ph-side"><span class="ph-tag">RRFF-owned photo only · Use existing helmet/station image if available</span></div>
+  </div>
+</section>
+
+<!-- GIVE BLOCK -->
+<section id="give" class="band band-cream give-band">
+  <div class="give-grid">
+    <div class="give-form-card">
+      <p class="eyebrow eyebrow-dark">Legacy donor circle</p>
+      <h2 class="h-display">The Founding Legacy Donor Circle is open.</h2>
+      <p class="donor-intro">Be part of the first group of donors helping launch The 1884 Fund and establish confidential emergency support for Round Rock fire families.</p>
+
+      <div class="give-toggle" role="tablist" aria-label="Donation frequency">
+        <button class="give-tab is-active" data-freq="one" role="tab" aria-selected="true">One-time</button>
+        <button class="give-tab" data-freq="monthly" role="tab" aria-selected="false">Monthly</button>
+      </div>
+
+      <div class="give-amounts">
+        <button class="amt" data-amt="25">$25</button>
+        <button class="amt" data-amt="50">$50</button>
+        <button class="amt is-active" data-amt="100">$100</button>
+        <button class="amt" data-amt="250">$250</button>
+        <button class="amt" data-amt="500">$500</button>
+        <label class="amt amt-custom">
+          <span>$</span>
+          <input type="number" min="1" placeholder="Other" aria-label="Custom amount" />
+        </label>
+      </div>
+
+      <div class="give-impact" aria-live="polite">
+        <strong id="giveLine">$100</strong>
+        <span id="giveCopy">helps build the founding reserve for The 1884 Fund.</span>
+      </div>
+
+      <button class="btn btn-gold btn-lg btn-block" id="giveBtn">
+        Continue to secure giving →
+      </button>
+      <p class="give-fine">
+        Processed via Central Texas Community Foundation &amp; Network for Good. You will receive a tax-deductible receipt.
+      </p>
+
+      <ul class="give-ways">
+        <li><strong>Mail a check —</strong> Add mailing address here.</li>
+        <li><strong>Donor-advised funds —</strong> Add DAF instructions here.</li>
+        <li><strong>Founding Legacy Donor pledges —</strong> Contact RRFF to discuss a founding gift, pledge, or donor-advised fund contribution.</li>
+      </ul>
+    </div>
+
+    <aside class="give-quote">
+      <blockquote>
+        “This foundation’s mission is to give back to the community that stood by us and ensure every fire family feels that same strength and support.”
+        <cite>— Wylie Brownell</cite>
+      </blockquote>
+      <div class="ph ph-quote" aria-hidden="true">
+        <span class="ph-tag">RRFF-owned portrait only · Use existing approved photography</span>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- IMPACT BREAKDOWN -->
+<section id="impact" class="band band-navy">
+  <div class="band-head">
+    <p class="eyebrow eyebrow-light">Founding effort</p>
+    <h2 class="h-display light">This year’s priority is launching The 1884 Fund.</h2>
+    <p class="band-sub">Because RRFF is newly established, this section frames planned use of funds rather than claiming historical impact.</p>
+  </div>
+
+  <div class="alloc-grid">
+    <article class="alloc-card">
+      <div class="alloc-bar"><span style="width:55%"></span></div>
+      <div class="alloc-head">
+        <h3>The 1884 Fund</h3>
+        <span class="alloc-pct">Priority 01</span>
+      </div>
+      <p>Build the first emergency-relief reserve for Round Rock fire families facing medical travel, care needs, disaster-related home repairs, hardship, and other crises.</p>
+      <ul class="alloc-list">
+        <li>Define confidential intake and review process</li>
+        <li>Set launch reserve target and donor levels</li>
+        <li>Invite the first Founding Legacy Donor commitments</li>
+      </ul>
+    </article>
+
+    <article class="alloc-card">
+      <div class="alloc-bar"><span style="width:30%"></span></div>
+      <div class="alloc-head">
+        <h3>Wellness &amp; Mental Health</h3>
+        <span class="alloc-pct">Priority 02</span>
+      </div>
+      <p>Behavioral health resources, peer support training, fitness, nutrition, and family wellness programs.</p>
+      <ul class="alloc-list">
+        <li>Identify trusted counseling and wellness resources</li>
+        <li>Support spouses and family-focused wellness needs</li>
+        <li><span data-placeholder>Add early wellness plan here</span></li>
+      </ul>
+    </article>
+
+    <article class="alloc-card">
+      <div class="alloc-bar"><span style="width:15%"></span></div>
+      <div class="alloc-head">
+        <h3>Community &amp; Family Events</h3>
+        <span class="alloc-pct">Priority 03</span>
+      </div>
+      <p>Family gatherings, retirement honors, station open houses, and Round Rock civic moments.</p>
+      <ul class="alloc-list">
+        <li>Founding-year donor gatherings</li>
+        <li>Family connection and recognition events</li>
+        <li><span data-placeholder>Add early event plan here</span></li>
+      </ul>
+    </article>
+  </div>
+
+  <div class="impact-strip">
+    <div><strong>2025</strong><span>Foundation established</span></div>
+    <div><strong>Circle forming</strong><span>Founding Legacy Donor Circle</span></div>
+    <div><strong>1884</strong><span>Fund launching this year</span></div>
+    <div><strong data-placeholder>$ ———</strong><span>Launch reserve target</span></div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="band band-cream story-strip">
+  <div class="grid-2">
+    <div class="story-body">
+      <p class="eyebrow eyebrow-dark">Why legacy donors matter</p>
+      <h2 class="h-display">Founding donors make quiet, practical help possible.</h2>
+      <p>
+        This early stage is about building the structure behind the compassion: governance, confidentiality, donor stewardship,
+        and a reserve that can reduce stress when a family is already carrying enough.
+      </p>
+      <p>
+        The goal is not recognition. It is a system strong enough to help when a fire family’s ordinary life suddenly divides into before and after.
+      </p>
+      <a class="btn btn-dark" href="#give">Become a Founding Legacy Donor</a>
+    </div>
+    <div class="story-media">
+      <div class="ph ph-story" aria-hidden="true">
+        <span class="ph-tag">RRFF-owned photo only · Use existing family/community image if approved</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="band band-cream faq-band">
+  <div class="band-head">
+    <p class="eyebrow eyebrow-dark">Donor FAQ</p>
+    <h2 class="h-display">Honest answers, not fine print.</h2>
+  </div>
+
+  <div class="faq-list">
+    <details>
+      <summary>Is my gift tax-deductible?</summary>
+      <p>Yes. The Round Rock Fire Foundation is a 501(c)(3) nonprofit. You’ll receive a tax-deductible receipt by email after each gift. Add your EIN here for donor records.</p>
+    </details>
+    <details>
+      <summary>How are donations processed?</summary>
+      <p>Online gifts are processed through the Central Texas Community Foundation in partnership with Network for Good. Your card or bank information is never stored on our site.</p>
+    </details>
+    <details>
+      <summary>What percentage goes to programs vs. overhead?</summary>
+      <p>RRFF is in its founding season, so formal annual reporting will follow after the first completed reporting year. Current giving is processed through the Central Texas Community Foundation in partnership with Network for Good.</p>
+    </details>
+    <details>
+      <summary>Can I direct my gift to a specific program?</summary>
+      <p>Yes. The current priority is launching The 1884 Fund. You may also give toward wellness, community events, or where most needed once the giving flow is configured.</p>
+    </details>
+    <details>
+      <summary>How do I cancel or change a monthly gift?</summary>
+      <p>Email us at hello@roundrockfirefoundation.org with the email used to give. We process changes within two business days, no questions asked.</p>
+    </details>
+    <details>
+      <summary>Does my employer match?</summary>
+      <p>Many do. Add a matching-gift lookup widget or a list of common Round Rock employers that match. Replace this answer with your final flow.</p>
+    </details>
+    <details>
+      <summary>How can I give in honor or memory of someone?</summary>
+      <p>Add a note in the giving flow with the honoree’s name. We’ll send an acknowledgment card to the family at the address you provide.</p>
+    </details>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="band band-charcoal trust-band">
+  <div class="trust-grid">
+    <div>
+      <p class="eyebrow eyebrow-light">Careful stewardship</p>
+      <h2 class="h-display light">Built locally. Stewarded carefully.</h2>
+      <p class="trust-sub">RRFF is building thoughtfully, with current giving supported through the Central Texas Community Foundation and Network for Good. Formal annual reporting can be added after the first completed reporting year.</p>
+      <div class="trust-cta">
+        <a class="btn btn-outline-light" href="#give">Give through our secure pathway</a>
+        <a class="btn btn-outline-light" href="#faq">Read donor FAQ</a>
+      </div>
+    </div>
+    <ul class="trust-badges">
+      <li>501(c)(3)<small>Tax-exempt</small></li>
+      <li>Central Texas Community Foundation<small>Giving partner</small></li>
+      <li>Network for Good<small>Donation processing</small></li>
+      <li>NfG Verified<small>Secure giving</small></li>
+      <li>Locally Governed<small>Round Rock board</small></li>
+    </ul>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="band band-fire-cta">
+  <div class="cta-inner">
+    <h2 class="h-display light">Make your gift today.</h2>
+    <p class="cta-sub">Every dollar stays in service of the firefighters and families of Round Rock.</p>
+    <div class="hero-actions center">
+      <a class="btn btn-gold btn-lg" href="#give">Donate now</a>
+      <a class="btn btn-outline-light btn-lg" href="volunteer.html">Or volunteer with us</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="logo logo-foot">
+        <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+          <path d="M20 4 C26 12, 32 16, 32 24 a12 12 0 0 1-24 0 c0-6 4-10 6-14 2 4 4 6 4 10 0-4 1-8 2-16z" fill="currentColor"/>
+          <circle cx="20" cy="26" r="4" fill="#0B1320"/>
+        </svg>
+        <span class="logo-word">Round Rock <em>Fire Foundation</em></span>
+      </div>
+      <p class="foot-tag">Honoring heroes. Supporting firefighters. Strengthening our community.</p>
+      <p class="foot-disclaimer">RRFF is a nonpartisan nonprofit and is not associated with any political group, PAC, candidate committee, or advocacy organization.</p>
+    </div>
+    <div>
+      <h4>Visit</h4>
+      <ul class="foot-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="donate.html">Donate &amp; Impact</a></li>
+        <li><a href="volunteer.html">Volunteer</a></li>
+        <li><a href="index.html#programs">Programs</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Act</h4>
+      <ul class="foot-list">
+        <li><a href="#give">Donate</a></li>
+        <li><a href="volunteer.html">Volunteer</a></li>
+        <li><a href="#give">Legacy donor circle</a></li>
+        <li><a href="index.html#contact">Request Support</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul class="foot-list muted">
+        <li>P.O. Box · Round Rock, TX</li>
+        <li>hello@roundrockfirefoundation.org</li>
+        <li>EIN — Add EIN here</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-base">
+    <span>© 2025 Round Rock Fire Foundation · 501(c)(3) nonprofit</span>
+    <span class="foot-links">
+      <a href="#">Privacy</a><a href="#">Financials</a><a href="#">Board</a>
+    </span>
+  </div>
+</footer>
+
+<script src="js/site.js"></script>
+</body>
+</html>
