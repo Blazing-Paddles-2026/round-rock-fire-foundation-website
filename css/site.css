@@ -265,7 +265,19 @@
   align-items: center;
 }
 @media (max-width: 880px) { .chief-letter-grid { grid-template-columns: 1fr; } }
-.chief-letter-photo .ph { aspect-ratio: 4/5; }
+.chief-letter-photo {
+  position: relative;
+}
+.chief-photo-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  box-shadow: 0 28px 70px -42px rgba(11,19,32,.55);
+}
 .ph-chief::before {
   background:
     radial-gradient(100% 75% at 50% 12%, rgba(242,201,105,.28), transparent 60%),
