@@ -54,25 +54,6 @@
   .top-cta .btn-ghost { display: none; }
 }
 
-/* =========== Concept ribbon =========== */
-.concept-ribbon {
-  display: flex; gap: 14px; align-items: center; flex-wrap: wrap;
-  padding: 10px var(--pad-x);
-  background: var(--charcoal);
-  color: rgba(244,239,227,.7);
-  font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
-  border-bottom: 1px solid var(--line-light);
-}
-.ribbon-label { color: var(--gold-soft); font-weight: 700; }
-.concept-ribbon a {
-  color: rgba(244,239,227,.6);
-  padding: 4px 10px; border: 1px solid var(--line-light); border-radius: 999px;
-  transition: all .2s;
-}
-.concept-ribbon a:hover { color: var(--cream); border-color: var(--gold); }
-.concept-ribbon a.is-active { background: var(--gold); color: var(--navy-deep); border-color: var(--gold); }
-.ribbon-note { margin-left: auto; color: rgba(244,239,227,.4); font-style: italic; text-transform: none; letter-spacing: 0; }
-
 /* =========== Buttons =========== */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
