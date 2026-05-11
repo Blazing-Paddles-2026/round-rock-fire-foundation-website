@@ -17,19 +17,16 @@
   display: inline-flex; align-items: center; gap: 12px;
   color: var(--cream); font-family: var(--display); font-weight: 700;
   font-size: 16px; letter-spacing: 0.01em;
-  padding: 4px 8px;
-  border-radius: 10px;
-  background: rgba(255,255,255,.96);
 }
-.logo-img {
-  width: 132px;
-  height: auto;
-  max-height: 42px;
+.logo-icon {
+  width: 34px;
+  height: 34px;
   object-fit: contain;
+  flex-shrink: 0;
 }
-.logo-img-foot {
-  width: 180px;
-  max-height: none;
+.logo-icon-foot {
+  width: 42px;
+  height: 42px;
 }
 .logo-word em { font-style: normal; font-weight: 500; color: var(--gold-soft); display: block; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; line-height: 1; margin-top: 2px;}
 .logo-word { display: inline-flex; flex-direction: column; line-height: 1.05; }
