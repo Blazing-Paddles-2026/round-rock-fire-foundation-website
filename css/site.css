@@ -455,11 +455,49 @@
 }
 .ph-program { aspect-ratio: 4/3; }
 .ph-1884::before { background: radial-gradient(120% 90% at 30% 30%, rgba(224,162,42,.4), transparent 60%), radial-gradient(80% 60% at 80% 80%, rgba(178,58,42,.35), transparent 70%); }
+.ph-chap::before { background: radial-gradient(120% 90% at 20% 20%, rgba(242,201,105,.28), transparent 60%), radial-gradient(90% 70% at 80% 85%, rgba(91,138,189,.24), transparent 70%); }
 .ph-wellness::before { background: radial-gradient(120% 90% at 70% 20%, rgba(91,138,189,.35), transparent 60%), radial-gradient(80% 60% at 20% 80%, rgba(224,162,42,.22), transparent 70%); }
 .ph-events::before { background: radial-gradient(120% 90% at 50% 80%, rgba(224,162,42,.35), transparent 60%), radial-gradient(80% 60% at 80% 20%, rgba(178,58,42,.20), transparent 70%); }
 .ph-story { aspect-ratio: 4/5; }
 .ph-side { aspect-ratio: 3/4; height: 100%; }
 .ph-quote { aspect-ratio: 4/5; margin-top: 24px; }
+
+/* =========== Signature feature band =========== */
+.signature-band { position: relative; overflow: hidden; }
+.signature-band::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(760px 420px at 15% 20%, rgba(224,162,42,.16), transparent 62%),
+    radial-gradient(640px 420px at 90% 88%, rgba(178,58,42,.14), transparent 65%);
+}
+.signature-grid {
+  max-width: var(--maxw); margin: 0 auto;
+  display: grid; gap: 22px;
+  grid-template-columns: 1.2fr .95fr;
+  position: relative; z-index: 1;
+}
+@media (max-width: 900px) { .signature-grid { grid-template-columns: 1fr; } }
+.signature-feature {
+  border: 1px solid var(--line-light);
+  border-radius: calc(var(--radius) + 8px);
+  padding: clamp(28px, 5vw, 54px);
+  background: rgba(244,239,227,.045);
+  box-shadow: 0 30px 90px -60px rgba(0,0,0,.8);
+}
+.signature-feature p {
+  color: rgba(244,239,227,.76);
+  font-size: 17px;
+  max-width: 58ch;
+}
+.signature-feature-gold {
+  background:
+    linear-gradient(145deg, rgba(242,201,105,.92), rgba(224,162,42,.92)),
+    var(--gold);
+  color: var(--navy-deep);
+  border-color: rgba(242,201,105,.65);
+}
+.signature-feature-gold .h-display,
+.signature-feature-gold p { color: var(--navy-deep); }
 
 /* =========== Page heroes (donate / generic) =========== */
 .page-hero {
