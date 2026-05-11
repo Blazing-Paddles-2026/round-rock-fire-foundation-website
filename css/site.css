@@ -635,3 +635,49 @@
 [data-placeholder] { color: var(--gold-soft); font-style: italic; }
 .band-cream [data-placeholder] { color: var(--gold-deep); }
 .center { text-align: center; }
+
+/* =========== Review mode =========== */
+.rrff-review-mode { padding-bottom: 90px; }
+.rrff-review-toolbar {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 14px 16px;
+  border: 1px solid rgba(244,239,227,.18);
+  border-radius: 16px;
+  background: rgba(7,12,22,.94);
+  color: var(--cream);
+  box-shadow: 0 20px 60px rgba(0,0,0,.35);
+  backdrop-filter: blur(12px);
+  font-size: 13px;
+}
+.rrff-review-toolbar strong { color: var(--gold-soft); font-family: var(--sans); }
+.rrff-review-toolbar span { color: rgba(244,239,227,.72); flex: 1; min-width: 220px; }
+.rrff-review-toolbar button {
+  border: 1px solid rgba(244,239,227,.24);
+  border-radius: 999px;
+  background: rgba(244,239,227,.08);
+  color: var(--cream);
+  padding: 8px 12px;
+  font-weight: 700;
+  font-size: 12px;
+}
+.rrff-review-toolbar button:hover {
+  border-color: var(--gold);
+  color: var(--gold-soft);
+}
+.rrff-review-editable {
+  outline: 1px dashed rgba(242,201,105,.45);
+  outline-offset: 4px;
+  cursor: text;
+}
+.rrff-review-editable:focus {
+  outline: 2px solid var(--gold);
+  background: rgba(224,162,42,.10);
+}
