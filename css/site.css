@@ -68,11 +68,17 @@
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
   padding: 12px 22px; border-radius: 999px; border: 1px solid transparent;
   font-weight: 700; font-size: 14px; letter-spacing: 0.02em;
-  text-decoration: none; transition: transform .15s ease, background .2s, color .2s, border-color .2s;
+  text-decoration: none;
+  transition: transform .22s cubic-bezier(.2,.7,.2,1),
+              box-shadow .22s ease,
+              background .22s ease, color .22s ease, border-color .22s ease;
   cursor: pointer;
+  will-change: transform;
 }
 .btn:hover { transform: translateY(-1px); }
-.btn:active { transform: translateY(0); }
+.btn:active { transform: translateY(0); transition-duration: .08s; }
+.btn-gold:hover { box-shadow: 0 14px 30px -16px rgba(224,162,42,.65); }
+.btn-dark:hover { box-shadow: 0 14px 30px -16px rgba(11,19,32,.6); }
 .btn-lg { padding: 16px 28px; font-size: 15px; }
 .btn-block { width: 100%; }
 
@@ -126,6 +132,7 @@
 .eyebrow-light { color: var(--gold-soft); }
 .eyebrow-dark { color: var(--gold-deep); }
 .eyebrow.center { display: flex; justify-content: center; }
+.hero .eyebrow { color: var(--gold-soft); }
 
 /* =========== Hero (home) =========== */
 .hero {
@@ -565,14 +572,27 @@ body[data-route="home"] .hero-meta { animation-delay: 1.2s; }
   border: 1px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;
-  transition: transform .25s ease, box-shadow .25s ease;
+  transition: transform .25s cubic-bezier(.2,.7,.2,1),
+              box-shadow .25s ease,
+              border-color .25s ease;
 }
-.program-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.program-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 32px 70px -36px rgba(11,19,32,.45);
+  border-color: rgba(224,162,42,.45);
+}
 .program-body { padding: 24px 24px 28px; }
 .program-tag { text-transform: uppercase; letter-spacing: 0.14em; font-size: 11px; font-weight: 700; color: var(--gold-deep); margin: 0 0 8px; }
 .program-card h3 { font-family: var(--display); font-size: 28px; margin-bottom: 10px; }
-.link-arrow { font-weight: 700; color: var(--navy); border-bottom: 2px solid var(--gold); padding-bottom: 2px; transition: color .2s; }
-.link-arrow:hover { color: var(--gold-deep); }
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 700; color: var(--navy);
+  border-bottom: 2px solid var(--gold); padding-bottom: 2px;
+  transition: color .22s ease, gap .22s cubic-bezier(.2,.7,.2,1), border-color .22s ease;
+}
+.link-arrow:hover { color: var(--gold-deep); gap: 8px; border-bottom-color: var(--gold-deep); }
 
 /* =========== Join community event cards =========== */
 .join-community-band {
@@ -831,8 +851,10 @@ body[data-route="home"] .hero-meta { animation-delay: 1.2s; }
 .foot-base {
   max-width: var(--maxw); margin: 56px auto 0; padding-top: 24px;
   border-top: 1px solid rgba(244,239,227,.1);
-  display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+  display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;
   font-size: 13px; color: rgba(244,239,227,.5);
+  text-align: center;
+  letter-spacing: 0.02em;
 }
 .foot-links a { margin-left: 20px; }
 .foot-links a:hover { color: var(--gold-soft); }
@@ -1147,4 +1169,149 @@ body[data-route="home"] .hero-meta { animation-delay: 1.2s; }
 .rrff-review-editable:focus {
   outline: 2px solid var(--gold);
   background: rgba(224,162,42,.10);
+}
+
+/* =========== Final polish pass =========== */
+
+/* Unified keyboard focus ring */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible,
+.btn:focus-visible,
+.amt:focus-visible,
+.give-tab:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+.btn:focus-visible { outline-offset: 3px; border-radius: 999px; }
+
+/* Subtle hairline between consecutive same-color bands so the homepage
+   doesn't read as one continuous cream slab */
+.band-cream + .band-cream {
+  border-top: 1px solid var(--line);
+}
+
+/* Tighten heading rhythm just under section eyebrows */
+.band-head .eyebrow { margin-bottom: 14px; }
+.band-head .h-display + .band-sub { margin-top: 18px; }
+
+/* Mission section: a touch more breathing room on the body column */
+.mission-body > p:first-of-type { margin-top: 0; }
+.mission-body .pullquote { margin-top: 28px; }
+
+/* Hero meta strip — slightly more presence and refined hairline */
+.hero-meta {
+  border-color: rgba(244,239,227,.22);
+  background: linear-gradient(180deg, rgba(7,12,22,.45), rgba(7,12,22,.30));
+}
+.hero-meta li + li {
+  position: relative;
+}
+@media (min-width: 761px) {
+  .hero-meta li + li::before {
+    content: "";
+    position: absolute;
+    left: -14px; top: 6px; bottom: 6px;
+    width: 1px;
+    background: linear-gradient(180deg, transparent, rgba(244,239,227,.18), transparent);
+  }
+}
+
+/* Event card links — soften the secondary link so the pair has hierarchy */
+.event-card-links .link-arrow + .link-arrow {
+  color: var(--ink-2);
+  border-bottom-color: rgba(224,162,42,.55);
+}
+.event-card-links .link-arrow + .link-arrow:hover {
+  color: var(--gold-deep);
+  border-bottom-color: var(--gold-deep);
+}
+
+/* Featured event card — softer media seam and tighter copy column */
+.event-feature-card-large .event-card-media {
+  border-right: 1px solid var(--line);
+}
+@media (max-width: 680px) {
+  .event-feature-card-large .event-card-media { border-right: 0; border-bottom: 1px solid var(--line); }
+}
+
+/* Action card — match the new hover language */
+.action-card {
+  transition: transform .25s cubic-bezier(.2,.7,.2,1),
+              background .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+.action-card:hover { box-shadow: 0 28px 60px -42px rgba(0,0,0,.6); }
+
+/* Allocation / impact cards — light gold border tint on hover, consistent rhythm */
+.alloc-card {
+  transition: border-color .25s ease, background .25s ease, transform .25s cubic-bezier(.2,.7,.2,1);
+}
+.alloc-card:hover {
+  border-color: rgba(242,201,105,.42);
+  background: rgba(244,239,227,.06);
+  transform: translateY(-2px);
+}
+.impact-card {
+  transition: border-color .25s ease, background .25s ease, transform .25s cubic-bezier(.2,.7,.2,1);
+}
+.impact-card:hover { transform: translateY(-2px); }
+
+/* FAQ details polish — clearer open state and smooth chevron */
+.faq-list summary { transition: color .2s ease; }
+.faq-list summary:hover { color: var(--gold-deep); }
+.faq-list details[open] summary { color: var(--ink); }
+
+/* Partner logo — replace dashed cell with a calmer hairline; reads more premium */
+.partner-logo {
+  border-style: solid;
+  border-color: var(--line);
+  background: var(--paper);
+  transition: border-color .25s ease, color .25s ease, transform .25s cubic-bezier(.2,.7,.2,1);
+}
+.partner-logo:hover {
+  border-color: var(--gold);
+  color: var(--gold-deep);
+  transform: translateY(-2px);
+}
+
+/* Pull quote refinement on the mission band */
+.pullquote {
+  background: linear-gradient(180deg, transparent, rgba(224,162,42,.06));
+  padding: 14px 14px 14px 18px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+/* Smoother scroll-cue, slightly elevated */
+.scroll-cue { transition: transform .22s ease, border-color .22s ease; }
+.scroll-cue:hover { transform: translateX(-50%) translateY(-2px); border-color: var(--gold-soft); }
+
+/* Subtle elevation on form inputs across pages */
+.signup input,
+.give-amounts .amt,
+.give-tab {
+  transition: border-color .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+}
+.signup input:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(224,162,42,.18); outline: none; }
+.amt:focus-visible { box-shadow: 0 0 0 3px rgba(224,162,42,.20); outline: none; }
+
+/* Topbar — a touch more presence at scroll, sharper hairline */
+.topbar { box-shadow: 0 1px 0 rgba(244,239,227,.04); }
+
+/* Footer disclaimer reads as a fine-print line, not muted copy */
+.foot-disclaimer { font-style: italic; }
+
+/* Reduce motion: respect users who opt out */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
