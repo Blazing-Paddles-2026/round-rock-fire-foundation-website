@@ -788,8 +788,113 @@ body[data-route="home"] .hero-meta { animation-delay: 1.2s; }
 .story-media .ph { aspect-ratio: 4/5; }
 .story-body p { font-size: 17px; color: var(--ink-2); max-width: 50ch; }
 
+/* =========== Legacy Circle band =========== */
+.legacy-band { position: relative; overflow: hidden; }
+.legacy-band::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(720px 380px at 8% 4%, rgba(224,162,42,.12), transparent 62%),
+    radial-gradient(640px 420px at 100% 96%, rgba(91,138,189,.10), transparent 65%);
+}
+.legacy-grid {
+  max-width: var(--maxw); margin: 0 auto;
+  display: grid; gap: clamp(28px, 5vw, 64px);
+  grid-template-columns: 1.45fr .9fr;
+  align-items: start;
+  position: relative; z-index: 1;
+}
+@media (max-width: 900px) { .legacy-grid { grid-template-columns: 1fr; } }
+.legacy-body .h-display { max-width: 22ch; margin-bottom: 18px; }
+.legacy-lede {
+  font-size: clamp(17px, 1.4vw, 19px);
+  line-height: 1.55;
+  color: var(--ink-2);
+  max-width: 56ch;
+  margin: 0 0 28px;
+}
+.legacy-points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+  display: grid;
+  gap: 16px;
+  max-width: 60ch;
+}
+.legacy-points li {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 16px;
+  align-items: start;
+  padding: 16px 18px;
+  background: rgba(244,239,227,.55);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: border-color .25s ease, background .25s ease, transform .25s cubic-bezier(.2,.7,.2,1);
+}
+.legacy-points li:hover {
+  border-color: rgba(224,162,42,.5);
+  background: rgba(255,255,255,.6);
+  transform: translateY(-1px);
+}
+.legacy-mark {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--gold-deep);
+  letter-spacing: .04em;
+  line-height: 1;
+  padding-top: 3px;
+}
+.legacy-points li div { font-size: 15px; line-height: 1.55; color: var(--ink-2); }
+.legacy-points strong { color: var(--ink); font-weight: 700; }
+.legacy-actions {
+  display: flex; gap: 14px; align-items: center; flex-wrap: wrap;
+}
+.legacy-aside {
+  position: sticky; top: 110px;
+  align-self: start;
+}
+@media (max-width: 900px) { .legacy-aside { position: static; } }
+.legacy-card {
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) + 6px);
+  background:
+    linear-gradient(160deg, rgba(255,255,255,.85), rgba(244,239,227,.5));
+  padding: clamp(24px, 3vw, 32px);
+  box-shadow: 0 30px 80px -56px rgba(11,19,32,.45);
+}
+.legacy-card .eyebrow { margin-bottom: 12px; }
+.legacy-card-lede {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-2);
+  margin: 0 0 18px;
+}
+.legacy-card-rule {
+  display: block;
+  width: 36px;
+  height: 2px;
+  background: var(--gold);
+  margin: 0 0 18px;
+}
+.legacy-card-pledge {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: clamp(17px, 1.8vw, 20px);
+  line-height: 1.35;
+  color: var(--ink);
+  margin: 0;
+}
+
 /* =========== Partners =========== */
 .partners-band { padding-top: 48px; padding-bottom: 80px; border-top: 1px solid var(--line); }
+.partners-note {
+  max-width: 60ch; margin: 0 auto 28px;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  font-style: italic;
+}
 .partners-row {
   max-width: var(--maxw); margin: 24px auto 0;
   display: grid; gap: 16px;
@@ -1314,4 +1419,100 @@ summary:focus-visible,
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* =========== Mobile-first polish =========== */
+
+/* Hero on small screens — pull the title down a hair, give the
+   meta strip room to breathe, and keep CTAs comfortably tappable */
+@media (max-width: 640px) {
+  .hero {
+    min-height: auto;
+    padding-top: 80px;
+    padding-bottom: 48px;
+  }
+  .hero-title { font-size: clamp(44px, 13vw, 64px); line-height: .98; }
+  .hero .lede { font-size: 16px; line-height: 1.55; }
+  .hero-actions { gap: 10px; margin: 22px 0 28px; }
+  .hero-actions .btn-lg { width: 100%; padding: 14px 22px; font-size: 15px; }
+  .hero-actions .btn-text { width: auto; padding: 6px 4px; }
+  .hero-meta { padding: 16px; gap: 14px; border-radius: var(--radius); }
+  .hero-meta strong { font-size: 18px; }
+  .hero-meta span { font-size: 13px; line-height: 1.5; }
+  .scroll-cue { display: none; }
+}
+
+/* Event cards on small screens — tighter copy padding, full-width
+   primary buttons, date rail wraps cleanly */
+@media (max-width: 640px) {
+  .event-card-grid { gap: 16px; }
+  .event-card-copy { padding: 22px 20px 24px; }
+  .event-card-copy h3 { font-size: 26px; line-height: 1.1; }
+  .event-card-copy p { font-size: 15px; line-height: 1.55; }
+  .event-feature-card-large .event-card-media { min-height: 220px; }
+  .event-card-actions { gap: 10px; }
+  .event-card-actions .btn { width: 100%; }
+  .event-card-links { gap: 14px 22px; }
+  .event-date-rail { flex-wrap: wrap; }
+}
+
+/* Chief section on small screens — keep portrait small, give the
+   quote room, body text comfortable */
+@media (max-width: 640px) {
+  .chief-letter-band { padding-top: 56px; padding-bottom: 56px; }
+  .chief-letter-compact .eyebrow { margin-bottom: 14px; }
+  .chief-quote-pair { gap: 16px; }
+  .chief-portrait { width: 96px; }
+  .chief-portrait-img { box-shadow: 0 12px 28px -20px rgba(11,19,32,.5); }
+  .chief-portrait .chief-attribution { font-size: 10px; }
+  .chief-quote-pair .chief-quote { font-size: 22px; line-height: 1.18; padding-left: 14px; }
+  .chief-letter-compact .chief-letter-body p { font-size: 16px; line-height: 1.6; }
+}
+
+/* Chap's Corner solo band on small screens — tighter padding,
+   readable measure */
+@media (max-width: 640px) {
+  .signature-band { padding-top: 56px; padding-bottom: 56px; }
+  .signature-feature { padding: 28px 22px; }
+  .signature-feature .h-display { font-size: clamp(28px, 8vw, 36px); }
+  .signature-feature p { font-size: 16px; line-height: 1.6; }
+}
+
+/* Legacy Circle band on small screens */
+@media (max-width: 640px) {
+  .legacy-body .h-display { font-size: clamp(28px, 8.5vw, 38px); }
+  .legacy-lede { font-size: 16px; }
+  .legacy-points li { grid-template-columns: 28px 1fr; gap: 12px; padding: 14px 16px; }
+  .legacy-points li div { font-size: 14.5px; }
+  .legacy-actions .btn-lg { width: 100%; }
+  .legacy-card { padding: 22px; }
+}
+
+/* Footer on small screens — calmer spacing, comfortable tap targets,
+   centered contact block */
+@media (max-width: 640px) {
+  .site-footer { padding: 56px 20px 24px; }
+  .footer-grid { gap: 32px; }
+  .foot-tag, .foot-disclaimer { max-width: none; }
+  .foot-list { gap: 10px; font-size: 15px; }
+  .site-footer h4 { font-size: 12px; margin-bottom: 12px; }
+  .foot-base { margin-top: 40px; font-size: 12px; }
+}
+
+/* Page heroes (donate / events / volunteer) on small screens */
+@media (max-width: 640px) {
+  .page-hero { padding: 80px 20px 56px; gap: 28px; }
+  .page-hero .display { font-size: clamp(32px, 9vw, 44px); }
+  .page-hero .lede { font-size: 16px; line-height: 1.55; }
+  .page-hero .hero-actions .btn-lg { width: 100%; }
+  .page-hero-graphic { display: none; }
+}
+
+/* Topbar nav padding tighter on phones so the gold Donate button
+   stays comfortable */
+@media (max-width: 640px) {
+  .topbar { padding: 12px 16px; }
+  .top-cta .btn { padding: 10px 16px; font-size: 13px; }
+  .logo-word { font-size: 14px; }
+  .logo-word em { font-size: 10px; }
 }
