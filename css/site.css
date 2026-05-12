@@ -1196,7 +1196,7 @@ body[data-route="home"] .hero-meta { animation-delay: 1.2s; }
   line-height: 1.02;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: var(--gold-soft);
+  color: var(--cream);
   margin: 0 0 10px;
 }
 .brand-panel-sub {
