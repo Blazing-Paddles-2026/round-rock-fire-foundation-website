@@ -850,6 +850,12 @@ body[data-route="home"] .hero-meta { animation-delay: 1.2s; }
 .legacy-actions {
   display: flex; gap: 14px; align-items: center; flex-wrap: wrap;
 }
+.legacy-contact {
+  margin: 16px 0 0;
+  font-size: 14.5px;
+  color: var(--ink-2);
+}
+.legacy-contact a { color: inherit; text-decoration: underline; }
 .legacy-aside {
   position: sticky; top: 110px;
   align-self: start;
