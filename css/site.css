@@ -807,6 +807,11 @@ body[data-route="home"] .hero-meta { animation-delay: 1.2s; }
   position: relative; z-index: 1;
 }
 @media (max-width: 900px) { .signature-grid { grid-template-columns: 1fr; } }
+.signature-grid-solo {
+  grid-template-columns: minmax(0, 760px);
+  justify-content: center;
+}
+@media (max-width: 900px) { .signature-grid-solo { grid-template-columns: 1fr; } }
 .signature-feature {
   border: 1px solid var(--line-light);
   border-radius: calc(var(--radius) + 8px);
