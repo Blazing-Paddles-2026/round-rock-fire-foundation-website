@@ -642,6 +642,13 @@ body[data-route="home"] .hero-meta { animation-delay: 1.2s; }
   flex-wrap: wrap;
   margin-top: 12px;
 }
+.event-card-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
 
 /* Kimi-style date rail — anchors every event card */
 .event-date-rail {
