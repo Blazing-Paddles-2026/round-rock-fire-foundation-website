@@ -1727,3 +1727,132 @@ summary:focus-visible,
   .logo-word { font-size: 14px; }
   .logo-word em { font-size: 10px; }
 }
+
+/* =========== 1884 Fund — solo feature program card =========== */
+.program-grid-solo {
+  grid-template-columns: minmax(0, 920px);
+  justify-content: center;
+}
+@media (max-width: 900px) { .program-grid-solo { grid-template-columns: 1fr; } }
+.program-card-feature {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  align-items: stretch;
+  box-shadow: 0 36px 90px -52px rgba(11,19,32,.55);
+}
+@media (max-width: 760px) { .program-card-feature { grid-template-columns: 1fr; } }
+.program-card-feature .program-body {
+  padding: clamp(28px, 4vw, 44px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+}
+.program-card-feature h3 {
+  font-size: clamp(28px, 3.4vw, 38px);
+  line-height: 1.15;
+}
+.program-card-feature p { color: var(--ink-2); font-size: 16px; }
+.program-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+/* =========== Kimi-style event spotlight box =========== */
+.event-card-grid-solo {
+  grid-template-columns: minmax(0, 980px);
+  justify-content: center;
+  margin-bottom: 22px;
+}
+@media (max-width: 980px) { .event-card-grid-solo { grid-template-columns: 1fr; } }
+.event-feature-card-spotlight {
+  border-color: rgba(224,162,42,.55);
+  box-shadow: 0 38px 100px -52px rgba(11,19,32,.6);
+}
+.event-feature-card-spotlight::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 5px;
+  background: linear-gradient(180deg, var(--gold), var(--gold-soft));
+}
+.event-feature-card-spotlight .event-spotlight-flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(224,162,42,.14);
+  color: var(--gold-deep);
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border: 1px solid rgba(224,162,42,.35);
+  align-self: flex-start;
+}
+.event-feature-card-spotlight .event-spotlight-pulse {
+  width: 8px; height: 8px; border-radius: 999px;
+  background: var(--gold);
+  box-shadow: 0 0 0 0 rgba(224,162,42,.6);
+  animation: rrffPulse 2s ease-out infinite;
+}
+@keyframes rrffPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(224,162,42,.55); }
+  70%  { box-shadow: 0 0 0 10px rgba(224,162,42,0); }
+  100% { box-shadow: 0 0 0 0 rgba(224,162,42,0); }
+}
+.event-feature-card-spotlight h3 {
+  font-size: clamp(30px, 4vw, 44px);
+}
+
+/* =========== Chap's Corner — dedicated support-resource box =========== */
+.chaps-corner-band { position: relative; }
+.chaps-corner-card {
+  max-width: 920px;
+  margin: 0 auto;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) + 8px);
+  padding: clamp(28px, 5vw, 52px);
+  box-shadow: 0 32px 90px -55px rgba(11,19,32,.5);
+  position: relative;
+  overflow: hidden;
+}
+.chaps-corner-card::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 5px;
+  background: linear-gradient(180deg, var(--gold), var(--gold-soft));
+}
+.chaps-corner-body { position: relative; z-index: 1; }
+.chaps-corner-body .h-display {
+  font-size: clamp(32px, 4.2vw, 46px);
+  margin-bottom: 14px;
+}
+.chaps-corner-lede {
+  font-size: 17px;
+  color: var(--ink-2);
+  max-width: 60ch;
+  margin-bottom: 12px;
+}
+.chaps-corner-note {
+  font-size: 14px;
+  color: var(--muted);
+  max-width: 60ch;
+  font-style: italic;
+  margin-bottom: 18px;
+}
+.chaps-corner-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
